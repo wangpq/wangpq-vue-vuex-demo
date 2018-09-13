@@ -1,13 +1,9 @@
 <template>
   <header class="header">
-
-  
+    <div class="wrap">
       <router-link to="/" slot="left">首页</router-link>
-
-      <router-link to="/favorites" slot="left">收藏</router-link>
-
- 
-
+      <router-link to="/collect" slot="left">收藏</router-link>
+    </div>
   </header>
 </template>
 
@@ -21,20 +17,27 @@ export default {
 
 <style scoped lang="less">
 header{
-  background-color: #fff;
   overflow:hidden;
-  padding: 0 12px;
-  a{
-    font-size:16px;
-    color:#666;
-    padding:10px 14px;
-    display: block;
-    float:left;
-    font-weight: bold;
-  }
-  & .router-link-exact-active{
-    color:#41B883;
-    background-color: #D8FCED;
+  height:44px;
+  .wrap{
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    padding: 0 12px;
+    background-color: #fff;
+    a{
+      font-size:16px;
+      color:#666;
+      padding:10px 18px;
+      display: block;
+      float:left;
+      font-weight: bold;
+    }
+    & .router-link-exact-active{
+      color:#fff;
+      background-color: #2b85e4;
+    }
   }
 } 
 </style>

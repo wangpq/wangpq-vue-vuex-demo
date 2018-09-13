@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from '@/views/Home'
-import Favorites from '@/views/Favorites'
+import CollectPage from '@/views/CollectPage'
 
 Vue.use(Router)
 
@@ -14,9 +14,9 @@ export default new Router({
       component: Home
     }, 
     {
-      path: '/favorites',
-      name: 'Favorites',
-      component: Favorites
+      path: '/collect',
+      name: 'CollectPage',
+      component: CollectPage
     }
   ]
 })

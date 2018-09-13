@@ -3,10 +3,9 @@
 
     <h2>收藏电影</h2>
     <ul class="movies">
-      <li v-for="(article,index) in articles" :key="article.id" :index="index">
-        {{index+1}}、 {{article.title}} 
-
-        <Button type="danger" size="small" shape="circle" >删除</Button>
+      <li v-for="(article,index) in articles" :key="article.id" :id="article.id">
+        <span>{{index+1}}、 {{article.title}} </span>
+        <Button type="warning" size="small" shape="circle" @click="onCollectDelete">删除</Button>
       </li>
     </ul>
 
@@ -26,6 +25,12 @@ export default {
       return this.$store.state.movieCollect
     }
   },
+  methods :{
+    onCollectDelete(event){
+      let id=event.currentTarget.parentNode.getAttribute("id")
+      this.$store.dispatch('deleteCollectById',id); 
+    }
+  }
 }
 </script>
 
@@ -37,9 +42,10 @@ export default {
   border-radius:6px;
   h2{
     font-weight: bold;
-    font-size:18px;
+    font-size:20px;
     margin-bottom:8px;
     color:#008cff;
+    text-align: left;
   }
   .movies{
     li{
