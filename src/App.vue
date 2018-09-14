@@ -1,13 +1,22 @@
 <template>
   <div id="app">
-    <router-view v-if="$route.meta.keepAlive"></router-view>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'App'
+  name: 'App',
+  created (){
+    //在页面加载时读取sessionStorage里的状态信息
+    sessionStorage.getItem("movieCollect") && this.$store.replaceState(JSON.parse(sessionStorage.getItem("movieCollect")));
+    
+    //在页面刷新时将vuex里的信息保存到sessionStorage里
+    window.addEventListener("beforeunload",()=>{
+      sessionStorage.setItem("movieCollect",JSON.stringify(this.$store.state))
+    })
+  }
 }
 </script>
 
