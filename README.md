@@ -1,9 +1,6 @@
 # wangpq-vue-vuex-demo
 > 使用Vue-cli脚手架构建的一个简单的Vue单页应用示例，旨在演示。使用到的技术，axios或者jsonp获取ajax数据，vuex管理状态,vue-router管理路由。
 
-## 运行效果
-![](./effect.gif)
-
 ## Vue单页应用刷新时数据状态如何保留
  
 如何监听刷新事件呢，我们可以通过 beforeunload 来达到目的，然后在 src下App.vue的created 钩子函数里写下了如下代码：
@@ -39,3 +36,6 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
+
+## 运行效果
+![](./effect.gif)
