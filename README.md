@@ -17,7 +17,7 @@ window.addEventListener("beforeunload",()=>{
 
 使用sessionStorage可以让刷新的时候数据不丢失，如果你想即使页面关闭后再从新打开，数据仍然不消失，请把sessionStorage换成 localStorage。
 
-这种方案缓存数据比将数据变化在vuex里使用sessionStorage或者localStorage更新要好，因为不用每次数据变化都更新数据，它只会在打开运行页面还有刷新页面的时候进行storage操作，并且我们可以指定使用storage缓存的数据字段，不是所有的数据都需要使用storage缓存。
+这种通过beforeunload监听的方案缓存数据比将数据变化在vuex里直接操作storage更新要好，因为不用每次数据变化都更新数据，它只会在打开关闭和刷新页面的时候进行storage操作，而且我们也可以指定使用storage缓存的数据字段，不是所有的数据都需要使用storage缓存。
 
 
 ## 如何运行此示例
